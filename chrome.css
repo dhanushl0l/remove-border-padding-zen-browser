@@ -24,3 +24,11 @@
     border-radius: 0 !important;
   }
 }
+
+/* Remove radious in address bar */
+:root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
+  &#zen-appcontent-navbar-container {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0px !important;
+   }
+}
