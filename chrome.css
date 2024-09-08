@@ -26,9 +26,11 @@
 }
 
 /* Remove radious in address bar */
-:root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
-  &#zen-appcontent-navbar-container {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0px !important;
-   }
+@media (-moz-bool-pref: "zen.view.compact") {
+  @media (-moz-bool-pref: "zen.view.compact.hide-toolbar") {
+    #zen-appcontent-navbar-container {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
+  }
 }
