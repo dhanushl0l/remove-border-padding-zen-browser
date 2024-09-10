@@ -1,10 +1,30 @@
 /* Remove border padding */
 :root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
   & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer  {
-    margin: 0 !important;
     border-radius: 0 !important;
   }
 }
+
+@media (-moz-bool-pref: "zen.view.compact") {
+  :root:not([inDOMFullscreen="true"]) #tabbrowser-tabpanels {
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media (-moz-bool-pref: "zen.view.compact") {
+  @media (-moz-bool-pref: "zen.view.compact.hide-toolbar") {
+    :root:not([inDOMFullscreen="true"]) #tabbrowser-tabpanels {
+      padding-left: 0 !important;
+      padding-top: 0 !important;
+      padding-right: 0 !important;
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
 
 /* Remove border padding from Zen sidebar */
 :root:not([inDOMFullscreen="true"]):not([chromehidden~="location"]):not([chromehidden~="toolbar"]) {
@@ -24,6 +44,7 @@
     border-radius: 0 !important;
   }
 }
+
 
 /* Remove radious in address bar */
 @media (-moz-bool-pref: "zen.view.compact") {
